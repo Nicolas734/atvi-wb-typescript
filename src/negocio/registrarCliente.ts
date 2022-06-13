@@ -42,7 +42,7 @@ export default class RegistrarCliente extends Cadastro{
         //
         let numeroTelefone = new Telefone ("(12)","981544755")
 
-        let cliente = new Cliente ("Natalia", "Lira", Cpf)
+        let cliente = new Cliente ("Natalia", "Lira", Cpf, "Menine")
         cliente.getRgs.push(Rgs)
         cliente.getTelefones.push(numeroTelefone)
         this.clientes.push(cliente)

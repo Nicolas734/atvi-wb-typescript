@@ -19,6 +19,7 @@ export default class CadastroCliente extends Cadastro {
         // Requisição dos dados do Cliente
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
         let nomeSocial = this.entrada.receberTexto(`Por favor informe o nome social do cliente: `)
+        let genero = this.entrada.receberTexto(`Informe seu genero: `)
         let valor = this.entrada.receberTexto(`Por favor informe o número do cpf, no padrão xxx.xxx.xxx-xx: `);
         let data = this.entrada.receberTexto(`Por favor informe a data de emissão do cpf, no padrão dd/mm/yyyy: `);
         let rgValor = this.entrada.receberTexto(`Por favor informe o número do RG: `);
@@ -54,7 +55,7 @@ export default class CadastroCliente extends Cadastro {
         let rgs = new RG(rgValor, dataEmissaoRg);
 
         let telefone = new Telefone(ddd, numero)
-        let cliente = new Cliente(nome, nomeSocial, cpf);
+        let cliente = new Cliente(nome, nomeSocial, cpf, genero);
 
         //
         cliente.getRgs.push(rgs)

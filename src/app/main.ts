@@ -10,6 +10,7 @@ import ListagemServicos from "../negocio/listagemServicos";
 import ServicosCliente from "../negocio/pedidosClientes";
 import RegistrarCliente from "../negocio/registrarCliente";
 import RegistrarProduto from "../negocio/registrarProduto";
+import RegistrarServico from "../negocio/registrarServicos"
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -38,11 +39,9 @@ while (execucao) {
     }
 
     console.log(`8 - Listagem de Pedidos`);
-
     console.log(`9 - Registrar cliente`);
-
     console.log(`10 - Registrar Produto`)
-    
+    console.log(`11 - Registrar Serviços`); 
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -97,6 +96,11 @@ while (execucao) {
         case 10:
             let RegistrarProdutos = new RegistrarProduto(empresa.getProdutos)
             RegistrarProdutos.cadastrar()
+            break;
+
+        case 11:
+            let RegistrarServicos = new RegistrarServico(empresa.getServicos)
+            RegistrarServicos.cadastrar()
             break;
 
         case 0:
