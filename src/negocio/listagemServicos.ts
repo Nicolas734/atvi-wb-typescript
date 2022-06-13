@@ -13,7 +13,7 @@ export default class ListagemServicos extends Listagem{
             console.log(`Nome do serviço: ` + servico.nomeServico);
             console.log(`Descrição do serviço: ` + servico.descServico);
             console.log(`Preço do serviço: ` + servico.precoServico);
-            console.log(`Código identificador do serviço: `);
+            console.log(`Código identificador do serviço: ` +servico.getIdServico);
             console.log(`--------------------------------------`);
         })
         console.log(`\n`);

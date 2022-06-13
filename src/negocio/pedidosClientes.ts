@@ -89,11 +89,13 @@ export default class ServicosCliente extends Cadastro{
         let servicos: Array<Servico> = []
         let addmore: boolean = true;
         do{
-            let comprea = entrada.receberTexto(`Deseja comprar um produto ? SIM ou NAO `)
+            let comprea = entrada.receberTexto(`Deseja um serviço ? SIM ou NAO `)
             if( comprea.toLocaleUpperCase() === 'SIM' ){
                 let servico:Servico = this.listServico()
 
                 servicos.push(servico)
+            }else{
+                addmore = false
             }
         }while(addmore)
 
