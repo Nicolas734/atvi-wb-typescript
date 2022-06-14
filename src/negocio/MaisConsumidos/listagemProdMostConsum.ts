@@ -24,7 +24,6 @@ export default class ListProdMostConsum extends Listagem{
             });
         })
         console.log(cliProd);
-        
 
     }
 }

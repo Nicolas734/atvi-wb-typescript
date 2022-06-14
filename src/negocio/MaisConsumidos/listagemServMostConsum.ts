@@ -24,7 +24,6 @@ export default class ListServMostConsul extends Listagem{
             })
         })
         console.log(cliServico);
-        
 
     }
 }

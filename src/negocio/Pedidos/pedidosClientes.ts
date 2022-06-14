@@ -62,7 +62,7 @@ export default class ServicosCliente extends Cadastro{
         let addmore: boolean = true;
         do{
             
-            let compra = entrada.receberTexto(`Deseja comprar um produto ? SIM ou NAO `)
+            let compra = entrada.receberTexto(`Deseja comprar um produto ? [ SIM / NAO ] `)
             if( compra.toLocaleUpperCase() === 'SIM' ){
                 let produto:Produto = this.listProd()
 

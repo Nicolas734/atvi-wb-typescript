@@ -16,17 +16,24 @@ export default class CadastroProduto extends Cadastro{
         // requisição dos dados do produto
 
         let nomeProduto = this.entrada.receberTexto(`Por favor informe o nome do produto: `)
-        let descricaoProduto = this.entrada.receberTexto(`Por favor informe a descrição do produto: `)
-        let categoriaProduto = this.entrada.receberTexto(`Por favor informe a categoria do produto: `)
-        let valorProduto = this.entrada.receberNumero(`Por favor informe o valor do produto: `)
-        let idProduto = this.entrada.receberNumero(`Por favor informe o codigo de identificação do produto: `)
+        
+        // Verificação se o produto ja esta cadastrado no sistema
+        let nomecad = this.produtos.map(i => (i.nomeProduto))
+        if (nomecad.includes(nomeProduto)){
+            console.log(`${nomeProduto} já existe no sistema !!!`);            
+        }else{
 
-        let produto = new Produto(nomeProduto,descricaoProduto,categoriaProduto,valorProduto,idProduto)
-        this.produtos.push(produto)
+            let descricaoProduto = this.entrada.receberTexto(`Por favor informe a descrição do produto: `)
+            let valorProduto = this.entrada.receberNumero(`Por favor informe o valor do produto R$: `)
+            let idProduto = this.entrada.receberNumero(`Por favor informe o codigo de identificação do produto: `)
 
-        //
-        console.log(`\n ${nomeProduto} inserido :) \n`);
-        console.log(`\n Cadastro de concluído :) \n`);
+            let produto = new Produto(nomeProduto,descricaoProduto,valorProduto,idProduto)
+            this.produtos.push(produto)
+
+            //
+            console.log(`\n ${nomeProduto} inserido :) \n`);
+            console.log(`\n Cadastro de concluído :) \n`);
+        }
         
     }
 }

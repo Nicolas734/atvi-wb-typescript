@@ -31,4 +31,4 @@ npm install
 ``` 
 - Execute a aplicação pelo seguinte comando:
 ```
-node out\app\main.js
+npm start

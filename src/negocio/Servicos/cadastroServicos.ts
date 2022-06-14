@@ -13,15 +13,22 @@ export default class CadastroServico extends Cadastro{
     public cadastrar(): void {
         console.log(`\nInicio do Cadastro de Servico. \n`);
 
-        // requisição dos dados do servico
+        // Requisição dos dados do servico
 
         let nomeServico = this.entrada.receberTexto(`Por favor informe o nome do servico: `)
-        let descServico = this.entrada.receberTexto(`Por favor informe a descrição do servico: `)
-        let precoServico = this.entrada.receberNumero(`Por favor informe o valor do produto: `)
-        let idServico = this.entrada.receberNumero(`Por favor informe o codigo de identificação do serviço: `)
 
-        let servico = new Servico(nomeServico, descServico, precoServico, idServico)
-        this.servicos.push(servico)
+        // Verificação se o serviço ja esta cadastrado no sistema
+        let nomecad = this.servicos.map(i => (i.nomeServico))
+        if (nomecad.includes(nomeServico)){
+            console.log(`${nomeServico} já existe no sistema !!!`);            
+        }else{
 
+            let descServico = this.entrada.receberTexto(`Por favor informe a descrição do servico: `)
+            let precoServico = this.entrada.receberNumero(`Por favor informe o valor do serviço R$: `)
+            let idServico = this.entrada.receberNumero(`Por favor informe o codigo de identificação do serviço: `)
+
+            let servico = new Servico(nomeServico, descServico, precoServico, idServico)
+            this.servicos.push(servico)
+    }
     }
 }

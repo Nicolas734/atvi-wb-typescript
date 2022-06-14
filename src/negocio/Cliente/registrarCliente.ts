@@ -25,7 +25,7 @@ export default class RegistrarCliente extends Cadastro{
         let dia = new Number(partesData[0].valueOf()).valueOf()
         let data = new Date (ano, mes, dia)
         
-        let Cpf = new CPF ("41455521459", data)
+        let Cpf = new CPF ("1", data)
 
 
         //    
@@ -42,15 +42,13 @@ export default class RegistrarCliente extends Cadastro{
         //
         let numeroTelefone = new Telefone ("(12)","981544755")
 
-        let cliente = new Cliente ("Natalia", "Lira", Cpf, "Menine")
+        let cliente = new Cliente ("Natalia", "Lira", Cpf, "N")
         cliente.getRgs.push(Rgs)
         cliente.getTelefones.push(numeroTelefone)
         this.clientes.push(cliente)
 
         //
         console.log("Cadastro concluido");
-        
-        
     }
 
 

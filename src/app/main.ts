@@ -13,6 +13,13 @@ import RegistrarProduto from "../negocio/Produto/registrarProduto";
 import RegistrarServico from "../negocio/Servicos/registrarServicos"
 import ListagemServMostConsum from "../negocio/MaisConsumidos/listagemServMostConsum"
 import ListagemProdMostConsum from "../negocio/MaisConsumidos/listagemProdMostConsum"
+import UpdateCliente from "../negocio/Cliente/updateCliente"
+import DeleteCliente from "../negocio/Cliente/deleteCliente";
+import DeleteProduto from "../negocio/Produto/deletarProduto";
+import DeleteServico from "../negocio/Servicos/deletarServicos"
+import UpdateProduto from "../negocio/Produto/updateProduto";
+import UpdateServico from "../negocio/Servicos/updateServico";
+import ListagemByGenero from "../negocio/ListByGenero/ListByGenero";
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -40,16 +47,22 @@ while (execucao) {
         console.log(`7 - Adicionar Pedido`);
     }
 
-    console.log(`8 - Listagem de Pedidos`);
-    console.log(`9 - Registrar cliente`);
-    console.log(`10 - Registrar Produto`)
-    console.log(`11 - Registrar Serviços`);
-    console.log(`12 - Serviços mais consumidos`);
-    console.log(`13 - Produtos mais consumidos`);
-    
+    console.log(`8 - Listagem de Pedidos.`);
+
+    if(empresa.getClientes.length < 1 )console.log(`9 - Autocadastro de Clientes.`);
+    if(empresa.getProdutos.length < 1 )console.log(`10 - Autocadastro de Produtos.`);
+    if(empresa.getServicos.length < 1 )console.log(`11 - Autocadastro de Serviços.`);
+
+    console.log(`12 - Serviços mais consumidos.`);
+    console.log(`13 - Produtos mais consumidos.`);
+    console.log(`14 - Atualizar Dados do Cliente.`);
+    console.log(`15 - Atualizar Dados do Produto.`);
+    console.log(`16 - Atualizar Dados do Serviço.`);
+    console.log(`17 - Remover Cliente.`);
+    console.log(`18 - Remover Produto.`);
+    console.log(`19 - Remover Serviço.`);
+    console.log(`20 - Listagem de Clientes por Gênero.`);
     console.log();
-    
-    
     console.log(`0 - Sair \n`);
 
     let entrada = new Entrada()
@@ -117,8 +130,44 @@ while (execucao) {
             break;
 
         case 13:
-            let prodMaisConsumido = new ListagemProdMostConsum (empresa.getClientes)
+            let prodMaisConsumido = new ListagemProdMostConsum(empresa.getClientes)
             prodMaisConsumido.listar()
+            break;
+
+        case 14:
+            let atualizarCliente = new UpdateCliente(empresa.getClientes)
+            atualizarCliente.atualizar()
+            break;
+
+        case 15:
+            let atualizarProduto = new UpdateProduto(empresa.getProdutos)
+            atualizarProduto.atualizar()
+            break;
+
+        case 16:
+            let atualizarServico = new UpdateServico(empresa.getServicos)
+            atualizarServico.atualizar()
+            break;
+
+        case 17:
+            let removerCliente = new DeleteCliente(empresa.getClientes)
+            removerCliente.delete()
+            break;
+
+        case 18:
+            let removerProduto = new DeleteProduto(empresa.getProdutos)
+            removerProduto.delete()
+            break;
+
+        case 19:
+            let removerServico = new DeleteServico(empresa.getServicos)
+            removerServico.delete()
+            break;
+
+
+        case 20:
+            let listarByGenero = new ListagemByGenero(empresa.getClientes)
+            listarByGenero.listar()
             break;
 
         case 0:
