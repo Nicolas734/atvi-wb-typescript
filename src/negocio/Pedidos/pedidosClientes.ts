@@ -1,12 +1,12 @@
-import Cadastro from "./cadastro";
-import Cliente from "../modelo/cliente";
-import Servico from "../modelo/servico";
-import ListagemServicos from "./Servicos/listagemServicos";
-import ListagemProdutos from "./Produto/listagemProduto";
-import ListagemClientes from "./Cliente/listagemClientes";
-import Empresa from "../modelo/empresa";
-import Produto from "../modelo/produto";
-import Entrada from "../io/entrada";
+import Cadastro from "../cadastro";
+import Cliente from "../../modelo/cliente";
+import Servico from "../../modelo/servico";
+import ListagemServicos from "../Servicos/listagemServicos";
+import ListagemProdutos from "../Produto/listagemProduto";
+import ListagemClientes from "../Cliente/listagemClientes";
+import Empresa from "../../modelo/empresa";
+import Produto from "../../modelo/produto";
+import Entrada from "../../io/entrada";
 
 export default class ServicosCliente extends Cadastro{
     public clientes: Array<Cliente>

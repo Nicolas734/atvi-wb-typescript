@@ -1,5 +1,5 @@
-import Cliente from "../modelo/cliente";
-import Listagem from "./listagem";
+import Cliente from "../../modelo/cliente";
+import Listagem from "../listagem";
 
 export default class ListProdMostConsum extends Listagem{
     private clientes: Array<Cliente>
@@ -18,11 +18,13 @@ export default class ListProdMostConsum extends Listagem{
                 let nome = prod.nomeProduto
                 let qtd = cliProd[prod.nomeProduto] = ( cliProd[prod.nomeProduto] || 0 ) + 1
                 cliProd.push({
-                    nome:nome,
-                    qtd:qtd
+                    nome: nome,
+                    quantidade: qtd
                 })
             });
         })
+        console.log(cliProd);
+        
 
     }
 }

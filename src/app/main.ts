@@ -4,13 +4,15 @@ import CadastroCliente from "../negocio/Cliente/cadastroCliente";
 import CadastroProduto from "../negocio/Produto/cadastroProduto";
 import CadastroServico from "../negocio/Servicos/cadastroServicos";
 import ListagemClientes from "../negocio/Cliente/listagemClientes";
-import ListagemPedidos from "../negocio/listagemPedidos";
+import ListagemPedidos from "../negocio/Pedidos/listagemPedidos";
 import ListagemProdutos from "../negocio/Produto/listagemProduto";
 import ListagemServicos from "../negocio/Servicos/listagemServicos";
-import ServicosCliente from "../negocio/pedidosClientes";
+import ServicosCliente from "../negocio/Pedidos/pedidosClientes";
 import RegistrarCliente from "../negocio/Cliente/registrarCliente";
 import RegistrarProduto from "../negocio/Produto/registrarProduto";
 import RegistrarServico from "../negocio/Servicos/registrarServicos"
+import ListagemServMostConsum from "../negocio/MaisConsumidos/listagemServMostConsum"
+import ListagemProdMostConsum from "../negocio/MaisConsumidos/listagemProdMostConsum"
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -41,7 +43,13 @@ while (execucao) {
     console.log(`8 - Listagem de Pedidos`);
     console.log(`9 - Registrar cliente`);
     console.log(`10 - Registrar Produto`)
-    console.log(`11 - Registrar Serviços`); 
+    console.log(`11 - Registrar Serviços`);
+    console.log(`12 - Serviços mais consumidos`);
+    console.log(`13 - Produtos mais consumidos`);
+    
+    console.log();
+    
+    
     console.log(`0 - Sair \n`);
 
     let entrada = new Entrada()
@@ -101,6 +109,16 @@ while (execucao) {
         case 11:
             let RegistrarServicos = new RegistrarServico(empresa.getServicos)
             RegistrarServicos.cadastrar()
+            break;
+
+        case 12:
+            let servMaisConsumido = new ListagemServMostConsum(empresa.getClientes)
+            servMaisConsumido.listar()
+            break;
+
+        case 13:
+            let prodMaisConsumido = new ListagemProdMostConsum (empresa.getClientes)
+            prodMaisConsumido.listar()
             break;
 
         case 0:
