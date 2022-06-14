@@ -1,9 +1,9 @@
-import Entrada from "../io/entrada";
-import Cliente from "../modelo/cliente";
-import CPF from "../modelo/cpf";
-import Cadastro from "./cadastro";
-import RG from "../modelo/rg";
-import Telefone from "../modelo/telefone";
+import Entrada from "../../io/entrada";
+import Cliente from "../../modelo/cliente";
+import CPF from "../../modelo/cpf";
+import Cadastro from "../cadastro";
+import RG from "../../modelo/rg";
+import Telefone from "../../modelo/telefone";
 
 
 export default class RegistrarCliente extends Cadastro{
@@ -15,7 +15,7 @@ export default class RegistrarCliente extends Cadastro{
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
-          
+        
         //
         
         let dataCpf = new String ("11/11/1998")

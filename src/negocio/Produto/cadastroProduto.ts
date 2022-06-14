@@ -1,7 +1,6 @@
-import Entrada from "../io/entrada";
-import Empresa from "../modelo/empresa";
-import Produto from "../modelo/produto";
-import Cadastro from "./cadastro";
+import Entrada from "../../io/entrada";
+import Produto from "../../modelo/produto";
+import Cadastro from "../cadastro";
 
 export default class CadastroProduto extends Cadastro{
     private produtos: Array<Produto>
@@ -12,18 +11,17 @@ export default class CadastroProduto extends Cadastro{
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
-        console.log(`\n Inicio do Cadastro do Produto.`);
+        console.log(`\n Inicio do Cadastro do Produto.\n`);
 
         // requisição dos dados do produto
 
         let nomeProduto = this.entrada.receberTexto(`Por favor informe o nome do produto: `)
         let descricaoProduto = this.entrada.receberTexto(`Por favor informe a descrição do produto: `)
         let categoriaProduto = this.entrada.receberTexto(`Por favor informe a categoria do produto: `)
-        let quantidadeProduto = this.entrada.receberNumero(`Por favor informe a quantidade do produto: `)
         let valorProduto = this.entrada.receberNumero(`Por favor informe o valor do produto: `)
         let idProduto = this.entrada.receberNumero(`Por favor informe o codigo de identificação do produto: `)
 
-        let produto = new Produto(nomeProduto,descricaoProduto,categoriaProduto,quantidadeProduto,valorProduto,idProduto)
+        let produto = new Produto(nomeProduto,descricaoProduto,categoriaProduto,valorProduto,idProduto)
         this.produtos.push(produto)
 
         //

@@ -1,7 +1,7 @@
-import Entrada from "../io/entrada";
-import Servico from "../modelo/servico";
-import Cadastro from "./cadastro";
-import Empresa from "../modelo/empresa";
+import Entrada from "../../io/entrada";
+import Servico from "../../modelo/servico";
+import Cadastro from "../cadastro";
+import Empresa from "../../modelo/empresa";
 import { log } from "console";
 
 export default class RegistrarServicos extends Cadastro {

@@ -1,6 +1,6 @@
-import Entrada from "../io/entrada";
-import Servico from "../modelo/servico";
-import Cadastro from "./cadastro";
+import Entrada from "../../io/entrada";
+import Servico from "../../modelo/servico";
+import Cadastro from "../cadastro";
 
 export default class CadastroServico extends Cadastro{
     private servicos: Array<Servico>
@@ -11,7 +11,7 @@ export default class CadastroServico extends Cadastro{
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
-        console.log(`\n Inicio do Cadastro de Servico.`);
+        console.log(`\nInicio do Cadastro de Servico. \n`);
 
         // requisição dos dados do servico
 

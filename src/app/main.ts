@@ -1,16 +1,16 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa"
-import CadastroCliente from "../negocio/cadastroCliente";
-import CadastroProduto from "../negocio/cadastroProduto";
-import CadastroServico from "../negocio/cadastroServicos";
-import ListagemClientes from "../negocio/listagemClientes";
+import CadastroCliente from "../negocio/Cliente/cadastroCliente";
+import CadastroProduto from "../negocio/Produto/cadastroProduto";
+import CadastroServico from "../negocio/Servicos/cadastroServicos";
+import ListagemClientes from "../negocio/Cliente/listagemClientes";
 import ListagemPedidos from "../negocio/listagemPedidos";
-import ListagemProdutos from "../negocio/listagemProduto";
-import ListagemServicos from "../negocio/listagemServicos";
+import ListagemProdutos from "../negocio/Produto/listagemProduto";
+import ListagemServicos from "../negocio/Servicos/listagemServicos";
 import ServicosCliente from "../negocio/pedidosClientes";
-import RegistrarCliente from "../negocio/registrarCliente";
-import RegistrarProduto from "../negocio/registrarProduto";
-import RegistrarServico from "../negocio/registrarServicos"
+import RegistrarCliente from "../negocio/Cliente/registrarCliente";
+import RegistrarProduto from "../negocio/Produto/registrarProduto";
+import RegistrarServico from "../negocio/Servicos/registrarServicos"
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -18,7 +18,7 @@ let empresa = new Empresa()
 let execucao = true
 
 while (execucao) {
-    console.log(`Opções:`);
+    console.log(`\nOpções: \n`);
     console.log(`1 - Cadastrar cliente`);
     console.log(`2 - Cadastrar produto`);
     console.log(`3 - Cadastrar serviço`);
@@ -42,7 +42,7 @@ while (execucao) {
     console.log(`9 - Registrar cliente`);
     console.log(`10 - Registrar Produto`)
     console.log(`11 - Registrar Serviços`); 
-    console.log(`0 - Sair`);
+    console.log(`0 - Sair \n`);
 
     let entrada = new Entrada()
     let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
@@ -105,10 +105,10 @@ while (execucao) {
 
         case 0:
             execucao = false
-            console.log(`Até mais`)
+            console.log(`\nAté mais \n`)
             break;
 
         default:
-            console.log(`Operação não entendida :(`)
+            console.log(`\nOperação não entendida :(`)
     }
 }
