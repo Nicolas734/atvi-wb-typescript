@@ -7,7 +7,7 @@ import ListagemClientes from "../negocio/Cliente/listagemClientes";
 import ListagemPedidos from "../negocio/Pedidos/listagemPedidos";
 import ListagemProdutos from "../negocio/Produto/listagemProduto";
 import ListagemServicos from "../negocio/Servicos/listagemServicos";
-import ServicosCliente from "../negocio/Pedidos/pedidosClientes";
+import RealizarPedido from "../negocio/Pedidos/pedidosClientes";
 import RegistrarCliente from "../negocio/Cliente/registrarCliente";
 import RegistrarProduto from "../negocio/Produto/registrarProduto";
 import RegistrarServico from "../negocio/Servicos/registrarServicos"
@@ -28,146 +28,180 @@ let execucao = true
 
 while (execucao) {
     console.log(`\nOpções: \n`);
-    console.log(`1 - Cadastrar cliente`);
-    console.log(`2 - Cadastrar produto`);
-    console.log(`3 - Cadastrar serviço`);
+
+
+    //  --- Clientes ---
+    console.log(" - Clientes: \n");    
+    console.log(`[1] Cadastrar cliente`);
+
+    if(empresa.getClientes.length)console.log(`[2] Listar todos os clientes`);
+
+    if(empresa.getClientes.length)console.log(`[3] Atualizar Dados do Cliente.`);
+
+    if(empresa.getClientes.length)console.log(`[4] Remover Cliente.`);
+
+    if(empresa.getClientes.length || empresa.getServicos.length || empresa.getProdutos.length){
+        console.log('\n' + `------------------------------------------------------------------` + '\n' );
+    }
+
+    //  --- Produtos ---
+    console.log("\n - Produtos: \n");
+    console.log(`[5] Cadastrar produto`);
+    if(empresa.getProdutos.length)console.log(`[6] Listar todos os produtos`);
     
-    if(empresa.getClientes.length){
-    console.log(`4 - Listar todos os clientes`);
-    }
-    if(empresa.getProdutos.length){
-        console.log(`5 - Listar todos os produtos`);
+    if(empresa.getProdutos.length)console.log(`[7] Atualizar Dados do Produto.`);
+
+    if(empresa.getProdutos.length)console.log(`[8] Remover Produto.`);
+    
+    if(empresa.getServicos.length || empresa.getProdutos.length){
+        console.log('\n' + `------------------------------------------------------------------` + '\n' );
     }
 
-    if(empresa.getServicos.length){
-        console.log(`6 - Listar todos os serviços`);
-    }
+    //  --- Serviços ---
+    console.log("\n - Serviços: \n");
+    console.log(`[9] Cadastrar serviço`);
 
+    if(empresa.getServicos.length)console.log(`[10] Listar todos os serviços`);
+
+    if(empresa.getServicos.length)console.log(`[11] Atualizar Dados do Serviço.`);
+
+    if(empresa.getServicos.length)console.log(`[12] Remover Serviço.`);
+        
     if(empresa.getClientes.length && empresa.getProdutos.length && empresa.getServicos.length){
-        console.log(`7 - Adicionar Pedido`);
+        console.log('\n' + `------------------------------------------------------------------` + '\n' );
+    }
+ 
+    //  --- Pedidos ---
+    console.log("\n - Pedidos: \n");
+    if(empresa.getClientes.length && empresa.getProdutos.length && empresa.getServicos.length){
+            console.log(`[13] Adicionar Pedido`);
+    } 
+    if(empresa.getClientes.length && empresa.getProdutos.length && empresa.getServicos.length){
+        console.log(`[14] Listagem de Pedidos.`);    
+    }   
+      
+    if(empresa.getClientes.length || empresa.getServicos.length || empresa.getProdutos.length){
+        console.log('\n' + `------------------------------------------------------------------` + '\n' );
     }
 
-    console.log(`8 - Listagem de Pedidos.`);
+    //  --- Listagens ---
+    if(empresa.getClientes.length || empresa.getServicos.length || empresa.getProdutos.length){
+        console.log("\n - Listagens: \n");
+    }
+    if(empresa.getClientes.length)console.log(`[15] Listagem de Clientes por Gênero.`);   
+    if(empresa.getServicos.length)console.log(`[16] Serviços mais consumidos.`);
+    if(empresa.getProdutos.length)console.log(`[17] Produtos mais consumidos.`);
 
-    if(empresa.getClientes.length < 1 )console.log(`9 - Autocadastro de Clientes.`);
-    if(empresa.getProdutos.length < 1 )console.log(`10 - Autocadastro de Produtos.`);
-    if(empresa.getServicos.length < 1 )console.log(`11 - Autocadastro de Serviços.`);
+    if(empresa.getClientes.length < 1 || empresa.getServicos.length < 1 || empresa.getProdutos.length < 1){
+        console.log('\n' + `------------------------------------------------------------------` + '\n' );
+    }
 
-    console.log(`12 - Serviços mais consumidos.`);
-    console.log(`13 - Produtos mais consumidos.`);
-    console.log(`14 - Atualizar Dados do Cliente.`);
-    console.log(`15 - Atualizar Dados do Produto.`);
-    console.log(`16 - Atualizar Dados do Serviço.`);
-    console.log(`17 - Remover Cliente.`);
-    console.log(`18 - Remover Produto.`);
-    console.log(`19 - Remover Serviço.`);
-    console.log(`20 - Listagem de Clientes por Gênero.`);
+    // --- Outras Opções --- 
+    if(empresa.getClientes.length < 1)console.log(`[18] Autocadastro de Clientes.`);
+    if(empresa.getProdutos.length < 1)console.log(`[19] Autocadastro de Produtos.`);
+    if(empresa.getServicos.length < 1)console.log(`[20] Autocadastro de Serviços.`);
+
+
+    // --- Sair ---
     console.log();
-    console.log(`0 - Sair \n`);
+    console.log(`[0] Sair \n`);
 
     let entrada = new Entrada()
     let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
 
     switch (opcao) {
+
+        // ----- Cliente -----
         case 1:
             let cadastro = new CadastroCliente(empresa.getClientes)
             cadastro.cadastrar()
-            break;
+            break;         
 
         case 2:
-            let cadastroProd = new CadastroProduto(empresa.getProdutos)
-            cadastroProd.cadastrar()
-            break;
-
-        case 3:
-            let cadastroServico = new CadastroServico(empresa.getServicos)
-            cadastroServico.cadastrar()
-            break;
-
-        case 4:
             let listagem = new ListagemClientes(empresa.getClientes)
             listagem.listar()
-            break;
-
-        case 5:
-            let listagemProd = new ListagemProdutos(empresa.getProdutos)
-            listagemProd.listar()
-            break;
-
-        case 6:
-            let listagemServico = new ListagemServicos(empresa.getServicos)
-            listagemServico.listar()
-            break;
-
-        case 7:
-            let ServicosClientes = new ServicosCliente(empresa)
-            ServicosClientes.adicionarPedido()
-            break;
-
-        case 8:
-            let listagemPedidos = new ListagemPedidos(empresa)
-            listagemPedidos.listar()
-            break;
-
-        case 9:
-            let RegistrarClientes = new RegistrarCliente(empresa.getClientes)
-            RegistrarClientes.cadastrar()
-            break;
-
-        case 10:
-            let RegistrarProdutos = new RegistrarProduto(empresa.getProdutos)
-            RegistrarProdutos.cadastrar()
-            break;
-
-        case 11:
-            let RegistrarServicos = new RegistrarServico(empresa.getServicos)
-            RegistrarServicos.cadastrar()
-            break;
-
-        case 12:
-            let servMaisConsumido = new ListagemServMostConsum(empresa.getClientes)
-            servMaisConsumido.listar()
-            break;
-
-        case 13:
-            let prodMaisConsumido = new ListagemProdMostConsum(empresa.getClientes)
-            prodMaisConsumido.listar()
-            break;
-
-        case 14:
+            break;            
+        case 3:
             let atualizarCliente = new UpdateCliente(empresa.getClientes)
             atualizarCliente.atualizar()
-            break;
-
-        case 15:
-            let atualizarProduto = new UpdateProduto(empresa.getProdutos)
-            atualizarProduto.atualizar()
-            break;
-
-        case 16:
-            let atualizarServico = new UpdateServico(empresa.getServicos)
-            atualizarServico.atualizar()
-            break;
-
-        case 17:
+            break;            
+        case 4:
             let removerCliente = new DeleteCliente(empresa.getClientes)
             removerCliente.delete()
             break;
 
-        case 18:
+        // ----- Produtos -----        
+        case 5:
+            let cadastroProd = new CadastroProduto(empresa.getProdutos)
+            cadastroProd.cadastrar()
+            break;
+        case 6:
+            let listagemProd = new ListagemProdutos(empresa.getProdutos)
+            listagemProd.listar()
+            break;
+        case 7:
+            let atualizarProduto = new UpdateProduto(empresa.getProdutos)
+            atualizarProduto.atualizar()
+            break;
+        case 8:
             let removerProduto = new DeleteProduto(empresa.getProdutos)
             removerProduto.delete()
             break;
 
-        case 19:
+        // ----- Serviços -----   
+        case 9:
+            let cadastroServico = new CadastroServico(empresa.getServicos)
+            cadastroServico.cadastrar()
+            break;
+        case 10:
+            let listagemServico = new ListagemServicos(empresa.getServicos)
+            listagemServico.listar()
+            break;
+        case 11:
+            let atualizarServico = new UpdateServico(empresa.getServicos)
+            atualizarServico.atualizar()
+            break;
+        case 12:
             let removerServico = new DeleteServico(empresa.getServicos)
             removerServico.delete()
             break;
 
+        // ----- Pedidos -----         
+        case 13:
+            let RealizarPedidoCliente = new RealizarPedido(empresa)
+            RealizarPedidoCliente.adicionarPedido()
+            break;
+        case 14:
+            let listagemPedidos = new ListagemPedidos(empresa)
+            listagemPedidos.listar()
+            break;
 
-        case 20:
+        // ----- Listagens ----- 
+        case 15:
             let listarByGenero = new ListagemByGenero(empresa.getClientes)
             listarByGenero.listar()
+            break;
+        case 16:
+            let servMaisConsumido = new ListagemServMostConsum(empresa.getClientes)
+            servMaisConsumido.listar()
+            break;
+        case 17:
+            let prodMaisConsumido = new ListagemProdMostConsum(empresa.getClientes)
+            prodMaisConsumido.listar()
+            break;
+
+        // ----- Outras Opções ----- 
+        case 18:
+            let RegistrarClientes = new RegistrarCliente(empresa.getClientes)
+            RegistrarClientes.cadastrar()
+            break;
+        case 19:
+            let RegistrarProdutos = new RegistrarProduto(empresa.getProdutos)
+            RegistrarProdutos.cadastrar()
+            break;
+        case 20:
+            let RegistrarServicos = new RegistrarServico(empresa.getServicos)
+            RegistrarServicos.cadastrar()
             break;
 
         case 0:

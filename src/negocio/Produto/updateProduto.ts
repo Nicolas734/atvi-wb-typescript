@@ -27,10 +27,10 @@ export default class UpdateProduto extends Update{
                 while (verifica) {
                     console.log("\n Selecione o que você deseja atualizar: \n");
                     console.log(`--------------------------------------\n`);                    
-                    console.log('1 - Nome do Produto');
-                    console.log('2 - Descrição do Produto');
-                    console.log('3 - Preço');
-                    console.log('0 - Sair para o Menu \n');
+                    console.log('[1] Nome do Produto');
+                    console.log('[2] Descrição do Produto');
+                    console.log('[3] Preço');
+                    console.log('[0] Sair para o Menu \n');
                     console.log(`--------------------------------------\n`);
 
                     let entrada = new Entrada()

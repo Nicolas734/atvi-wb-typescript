@@ -30,10 +30,10 @@ export default class UpdateServico extends Update{
 
                     console.log("\n Selecione o que você deseja atualizar: \n");
                     console.log(`--------------------------------------\n`);                    
-                    console.log('1 - Nome do Serviço');
-                    console.log('2 - Descrição do Serviço');
-                    console.log('3 - Preço do Serviço');
-                    console.log('0 - Sair para o Menu \n');
+                    console.log('[1] Nome do Serviço');
+                    console.log('[2] Descrição do Serviço');
+                    console.log('[3] Preço do Serviço');
+                    console.log('[0] Sair para o Menu \n');
                     console.log(`--------------------------------------\n`);
 
                     let entrada = new Entrada()

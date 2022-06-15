@@ -8,7 +8,7 @@ import Empresa from "../../modelo/empresa";
 import Produto from "../../modelo/produto";
 import Entrada from "../../io/entrada";
 
-export default class ServicosCliente extends Cadastro{
+export default class RealizarPedido extends Cadastro{
     public clientes: Array<Cliente>
     public produtos: Array<Produto>
     public servicos: Array<Servico>
@@ -22,8 +22,8 @@ export default class ServicosCliente extends Cadastro{
 
     adicionarPedido(){
         console.log(`
-        0 - Voltar Para o Menu Principal
-        1 - Cadastrar Pedido
+        [0] Voltar Para o Menu Principal
+        [1] Cadastrar Pedido
         `)
 
         let entrada = new Entrada()
@@ -89,7 +89,7 @@ export default class ServicosCliente extends Cadastro{
         let servicos: Array<Servico> = []
         let addmore: boolean = true;
         do{
-            let comprea = entrada.receberTexto(`Deseja um serviço ? SIM ou NAO `)
+            let comprea = entrada.receberTexto(`Deseja um serviço ? [ SIM / NAO ] `)
             if( comprea.toLocaleUpperCase() === 'SIM' ){
                 let servico:Servico = this.listServico()
 
