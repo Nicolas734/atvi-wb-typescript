@@ -33,11 +33,15 @@ export default class RealizarPedido extends Cadastro{
             case 0:
                 return
             case 1:
-                this.cadastrar()
-                break
+                if(this.clientes.length){
+                    this.cadastrar()
+                }else{
+                    console.log('\nNenhum Cliente Cadastrado')
+                }
+break
         }
     }
-
+                
     selectCliente(){
         let listarCli = new ListagemClientes(this.clientes)
         listarCli.listar()
@@ -104,11 +108,16 @@ export default class RealizarPedido extends Cadastro{
 
     public cadastrar(): void {
         const cliente = this.selectCliente()
-        const produtos = this.selectProduto()
-        const servicos = this.selectServico()
 
-        cliente?.getProdutosConsumidos.push(...produtos)
-        cliente?.getServicosConsumidos.push(...servicos)
+        if( this.produtos.length){
+            const produtos = this.selectProduto()
+            cliente?.getProdutosConsumidos.push(...produtos)
+        }
+
+        if( this.servicos.length ){
+            const servicos = this.selectServico()
+            cliente?.getServicosConsumidos.push(...servicos)
+        }
 
     }
 }

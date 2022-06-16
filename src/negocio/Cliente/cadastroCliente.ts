@@ -31,7 +31,7 @@ export default class CadastroCliente extends Cadastro {
             let genero = this.entrada.receberTexto(`Por favor informe seu genero ( M: Masculino | F: Feminino | N: Não informado ): `)
             let rgValor = this.entrada.receberTexto(`Por favor informe o número do RG: `);
             let rgDataEmissao = this.entrada.receberTexto(`Por favor informe a data de emissão do RG, no padrão dd/mm/yyyy: `);
-            let numeroTelefone = this.entrada.receberTexto(`Por favor informe o DDD e o numero de telefone, no padrão (xx) xxxxx-xxxx `)
+            let numeroTelefone = this.entrada.receberTexto(`Por favor informe o DDD e o numero de telefone, no padrão (xx) xxxx-xxxx `)
 
             //
             let partesData = data.split('/')

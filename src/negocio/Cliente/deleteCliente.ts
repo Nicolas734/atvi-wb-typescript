@@ -15,7 +15,7 @@ export default class DeleteCliente extends Delete {
         let listCli = new ListagemClientes(this.clientes)
         listCli.listar()
         let entrada = new Entrada()
-        let cpf = entrada.receberTexto("Digite o CPF do cliente")
+        let cpf = entrada.receberTexto("Digite o CPF do cliente: ")
         let indice = this.clientes.findIndex( i => i.getCpf.getValor === cpf)
         this.clientes.splice(indice, 1)
         return

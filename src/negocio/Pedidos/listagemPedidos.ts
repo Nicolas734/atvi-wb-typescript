@@ -28,19 +28,19 @@ export default class ListagemPedidos extends Listagem{
 
         cliente?.getProdutosConsumidos.map(prod => {
             cliProd.push({
-                nome: prod.nomeProduto,
-                descricao: prod.descricaoProduto,
-                valor: prod.getValorProduto,
-                id: prod.getIdProduto
+                nome: prod?.nomeProduto,
+                descricao: prod?.descricaoProduto,
+                valor: prod?.getValorProduto,
+                id: prod?.getIdProduto
             })
         })
 
         cliente?.getServicosConsumidos.map(serv => {
             cliServico.push({
-                nome: serv.nomeServico,
-                descricao: serv.descServico,
-                valor: serv.getPrecoServico,
-                id: serv.getIdServico
+                nome: serv?.nomeServico,
+                descricao: serv?.descServico,
+                valor: serv?.getPrecoServico,
+                id: serv?.getIdServico
             })
         })
 

@@ -37,6 +37,13 @@ export default class Cliente {
     public get getTelefones(): Array<Telefone> {
         return this.telefones
     }
+    public removerTelefone(telefoneRemovido: Telefone): Array<Telefone>{
+        const telefoneAtualizado = this.getTelefones.filter(tel => {
+            tel.getDdd !==  telefoneRemovido.getDdd && tel.getNumero !== telefoneRemovido.getNumero
+        })
+        this.telefones = telefoneAtualizado;
+        return this.telefones
+    }
     public get getProdutosConsumidos(): Array<Produto> {
         return this.produtosConsumidos
     }

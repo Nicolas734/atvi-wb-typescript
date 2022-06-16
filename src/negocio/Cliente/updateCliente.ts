@@ -20,7 +20,7 @@ export default class UpdateCliente extends Update{
         const listClientes = new ListagemClientes(this.clientes)
         listClientes.listar()
 
-        let cpf = this.entrada.receberTexto("\nDigite o CPF do cliente: ")
+        let cpf = this.entrada.receberTexto("Digite o CPF do cliente: ")
 
         this.clientes.forEach( cliente => {
             if(cpf === cliente.getCpf.getValor){
@@ -57,11 +57,21 @@ export default class UpdateCliente extends Update{
                             break;
 
                         case 4:
-                            let telefone: Array<Telefone> = [];
-                            let ddd = this.entrada.receberTexto(`Por favor informe o DDD: `)
-                            let numero = this.entrada.receberTexto(`Por favor informe o numero: `)
-                            telefone.push(new Telefone(ddd, numero))
-                            console.log(telefone)
+                            const telefones = cliente.getTelefones;
+                            for (let i: number = 0; i < cliente.getTelefones.length; i++){
+
+                            let numeroTelefone = this.entrada.receberTexto(`Antigo Numero ${telefones[i].getTelefone}, Insira o novo numero numero, no padrão (xx) xxxxx-xxxx `)
+
+                            // Formatação do telefone
+                            let separacaoNumero = numeroTelefone.split(')')
+                            let dadosNumero = separacaoNumero[0] + ")-" + separacaoNumero[1]
+                            let numeroEddd = dadosNumero.split("-")
+
+                            let ddd = new String(numeroEddd[0].valueOf()).valueOf()
+                            let numero = new String(numeroEddd[1].valueOf()).valueOf()
+
+                            cliente.removerTelefone(telefones[i])
+                            cliente.getTelefones.push(new Telefone(ddd, numero))}
                             break;
 
                         case 0:

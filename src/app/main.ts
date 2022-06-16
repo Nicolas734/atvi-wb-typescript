@@ -8,18 +8,20 @@ import ListagemPedidos from "../negocio/Pedidos/listagemPedidos";
 import ListagemProdutos from "../negocio/Produto/listagemProduto";
 import ListagemServicos from "../negocio/Servicos/listagemServicos";
 import RealizarPedido from "../negocio/Pedidos/pedidosClientes";
-import RegistrarCliente from "../negocio/Cliente/registrarCliente";
-import RegistrarProduto from "../negocio/Produto/registrarProduto";
-import RegistrarServico from "../negocio/Servicos/registrarServicos"
-import ListagemServMostConsum from "../negocio/MaisConsumidos/listagemServMostConsum"
-import ListagemProdMostConsum from "../negocio/MaisConsumidos/listagemProdMostConsum"
+import ListagemServMostConsum from "../negocio/Listas/listagemServMostConsum"
+import ListagemProdMostConsum from "../negocio/Listas/listagemProdMostConsum"
 import UpdateCliente from "../negocio/Cliente/updateCliente"
 import DeleteCliente from "../negocio/Cliente/deleteCliente";
 import DeleteProduto from "../negocio/Produto/deletarProduto";
 import DeleteServico from "../negocio/Servicos/deletarServicos"
 import UpdateProduto from "../negocio/Produto/updateProduto";
 import UpdateServico from "../negocio/Servicos/updateServico";
-import ListagemByGenero from "../negocio/ListByGenero/ListByGenero";
+import ListagemByGenero from "../negocio/Listas/ListByGenero";
+import geraCliente from "../scripts/geraCliente";
+import geraProduto from "../scripts/geraProduto";
+import geraServico from "../scripts/geraServico";
+import ListaMaiorConsumo from "../negocio/Listas/ListaMaiorConsumo";
+import ListaMenorConsumo from "../negocio/Listas/ListaMenorConsumo";
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -100,6 +102,16 @@ while (execucao) {
     if(empresa.getClientes.length < 1)console.log(`[18] Autocadastro de Clientes.`);
     if(empresa.getProdutos.length < 1)console.log(`[19] Autocadastro de Produtos.`);
     if(empresa.getServicos.length < 1)console.log(`[20] Autocadastro de Serviços.`);
+    if(empresa.getServicos.length < 1 && empresa.getProdutos.length < 1 && empresa.getClientes.length < 1){
+        console.log(`[21] Autocadastro de Serviços.`);
+    }
+
+    // --- Listagem por qtd de consumo ---
+
+    console.log(`[22] Listagem dos 10 Clientes que MAIS consumiram. `);
+    console.log(`[23] Listagem dos 5 Clientes que MENOS consumiram. `);
+
+    
 
 
     // --- Sair ---
@@ -192,16 +204,29 @@ while (execucao) {
 
         // ----- Outras Opções ----- 
         case 18:
-            let RegistrarClientes = new RegistrarCliente(empresa.getClientes)
-            RegistrarClientes.cadastrar()
+            let GeraClientes = new geraCliente(empresa.getClientes)
+            GeraClientes.cadastrar()            
             break;
         case 19:
-            let RegistrarProdutos = new RegistrarProduto(empresa.getProdutos)
-            RegistrarProdutos.cadastrar()
+            let GeraProduto = new geraProduto(empresa.getProdutos)
+            GeraProduto.cadastrar()
             break;
         case 20:
-            let RegistrarServicos = new RegistrarServico(empresa.getServicos)
-            RegistrarServicos.cadastrar()
+            let GeraServico = new geraServico(empresa.getServicos)
+            GeraServico.cadastrar()
+            break;
+        case 21:
+            // Cadastrar Clientes com Pedidos
+            break;
+
+        case 22:
+            let qtdMaisConsumido = new ListaMaiorConsumo(empresa)
+            qtdMaisConsumido.listar()
+            break;
+
+        case 23:
+            let qtdMenosConsumido = new ListaMenorConsumo(empresa)
+            qtdMenosConsumido.listar()
             break;
 
         case 0:
