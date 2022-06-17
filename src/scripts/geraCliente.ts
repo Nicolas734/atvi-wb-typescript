@@ -15,7 +15,7 @@ export default class geraCliente extends Cadastro{
 
     public cadastrar(): void {
         Clientlist.forEach(Clientlist=>{
-            let nome,nomeSocial,genero,cpf,rg, telefone,produtoConsumido;
+            let nome,nomeSocial,genero,cpf,rg, telefone;
 
             if(Clientlist.nomeSocial != undefined){
                 nome = Clientlist.nome;
@@ -58,34 +58,34 @@ export default class geraCliente extends Cadastro{
 }
 
 const Clientlist = [
-    {
-        nome: 'Natalia',
-        nomeSocial: 'Lira',
-        genero: 'F',
-        cpf:{
-            valor:'1',
-            dataEmissao:new Date(31,11,1982)
-        },
-        rg:{
-            valor:'1',
-            dataEmissao:new Date(11,12,2002)
-        },
-        telefone: new Telefone('(65)','4967-7585'),
-    },
-    {
-        nome: 'Nicolas',
-        nomeSocial: 'Lima',
-        genero: 'M',
-        cpf:{
-            valor:'2',
-            dataEmissao:new Date(21,12,2000)
-        },
-        rg:{
-            valor:'2',
-            dataEmissao:new Date(13,22,1122)
-        },
-        telefone: new Telefone('(51)','5655-7998')
-    },
+    // {
+    //     nome: 'Natalia',
+    //     nomeSocial: 'Lira',
+    //     genero: 'F',
+    //     cpf:{
+    //         valor:'1',
+    //         dataEmissao:new Date(31,11,1982)
+    //     },
+    //     rg:{
+    //         valor:'1',
+    //         dataEmissao:new Date(11,12,2002)
+    //     },
+    //     telefone: new Telefone('(65)','4967-7585'),
+    // },
+    // {
+    //     nome: 'Nicolas',
+    //     nomeSocial: 'Lima',
+    //     genero: 'M',
+    //     cpf:{
+    //         valor:'2',
+    //         dataEmissao:new Date(21,12,2000)
+    //     },
+    //     rg:{
+    //         valor:'2',
+    //         dataEmissao:new Date(13,22,1122)
+    //     },
+    //     telefone: new Telefone('(51)','5655-7998')
+    // },
     {
         nome: 'Raniel',
         nomeSocial: 'Daniel',

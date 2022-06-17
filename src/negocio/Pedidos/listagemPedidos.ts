@@ -44,20 +44,28 @@ export default class ListagemPedidos extends Listagem{
             })
         })
 
-        console.log(` \nProdutos Consumido do cliete: ${cliente?.nome} \n`)
-        cliProd.map(prod => {
-            console.log(`ID do produto: ${prod.id}`);
-            console.log(`Produtos: ${prod.nome}`);
-            console.log(`Preço do produto R$: ${prod.valor} \n`);
-        })
+        console.log(` \nProdutos Consumido do(a) cliente: ${cliente?.nome} \n`)
+        if(cliProd.length < 1){
+            console.log("Cliente ainda não comprou nenhum produto")
+        }else{
+            cliProd.map(prod => {
+                console.log(`ID do produto: ${prod.id}`);
+                console.log(`Produtos: ${prod.nome}`);
+                console.log(`Preço do produto R$: ${prod.valor} \n`);
+            })
+        }
 
         console.log(`-----------------------------------`);
 
-        console.log(`\nServiços consumidos do(a) cliente ${cliente?.nome}\n`);        
-        cliServico.map(serv =>{
-            console.log(`ID do serviço:${serv.id}`);
-            console.log(`Serviços:${serv.nome}`);
-            console.log(`Preço do serviço R$: ${serv.valor} \n`);
-        })   
+        console.log(`\nServiços consumidos do(a) cliente ${cliente?.nome}\n`);
+        if(cliServico.length < 1){
+            console.log("Cliente ainda não consumiu nenhum serviço")
+        }else{
+            cliServico.map(serv =>{
+                console.log(`ID do serviço:${serv.id}`);
+                console.log(`Serviços:${serv.nome}`);
+                console.log(`Preço do serviço R$: ${serv.valor} \n`);
+            })   
+        }        
     }
 } 

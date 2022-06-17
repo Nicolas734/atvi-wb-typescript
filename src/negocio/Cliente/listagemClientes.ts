@@ -8,8 +8,14 @@ export default class ListagemClientes extends Listagem {
         this.clientes = clientes
     }
     public listar(): void {
+
+        let ordenado = this.clientes.sort((a, b)=> 
+        parseInt(a.getCpf.getValor) - parseInt(b.getCpf.getValor)
+        )
+
         console.log(`\nLista de todos os clientes:\n`);
-        this.clientes.forEach((cliente) => {
+
+        ordenado.forEach((cliente) => {
             console.log(`Nome: ` + cliente.nome);
             console.log(`Nome Social: ` + cliente.nomeSocial);
             console.log(`Genero: ` + cliente.genero);
