@@ -23,7 +23,17 @@ export default class ListProdMostConsum extends Listagem{
                 })
             });
         })
-        console.log(cliProd);
+        let ordenado = cliProd.sort( (a: { quantidade: number; }, b: { quantidade: number; })  => {
+            return b.quantidade - a.quantidade }).slice(0, 1)
 
+            console.log(`\nProduto mais consumido`);
+
+            console.log("-------------------------------------------------------")
+
+            ordenado.forEach((consumidos: { nome: string, quantidade: string}) => {
+            console.log(`Nome: ${consumidos.nome}`);
+            console.log(`Quantidade consumida: ${consumidos.quantidade}`);
+            console.log();
+        })
     }
 }

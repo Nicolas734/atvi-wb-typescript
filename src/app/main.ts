@@ -20,10 +20,11 @@ import ListagemByGenero from "../negocio/Listas/ListByGenero";
 import geraCliente from "../scripts/geraCliente";
 import geraProduto from "../scripts/geraProduto";
 import geraServico from "../scripts/geraServico";
-import geraPedidosProd from "../scripts/geraPedidoProd";
+import geraPedidosProd from "../scripts/geraPedido";
 import ListaMaiorConsumo from "../negocio/Listas/ListaMaiorConsumo";
 import ListaMenorConsumo from "../negocio/Listas/ListaMenorConsumo";
-import geraPedidosServ from "../scripts/geraPedidoServ";
+import ListagemGeneroConsumo from "../negocio/Listas/ListaGeneroConsumo"
+import ListagemConsumidoPreco from "../negocio/Listas/ListaConsumoPreco";
 
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -104,18 +105,16 @@ while (execucao) {
     if(empresa.getClientes.length < 1)console.log(`[18] Autocadastro de Clientes.`);
     if(empresa.getProdutos.length < 1)console.log(`[19] Autocadastro de Produtos.`);
     if(empresa.getServicos.length < 1)console.log(`[20] Autocadastro de Serviços.`);
-    if(empresa.getProdutos.length && empresa.getClientes.length){
-        console.log(`[21] Autocadastro de Clientes com Produtos.`);
-    }
-    if(empresa.getServicos.length && empresa.getClientes.length){
-        console.log(`[22] Autocadastro de Clientes com Serviços.`);
-    }
+        console.log(`[21] Autocadastro de Clientes com Produtos e Serviços.`);
 
-    // --- Listagem por qtd de consumo ---
 
-    console.log(`[23] Listagem dos 10 Clientes que MAIS consumiram. `);
-    console.log(`[24] Listagem dos 5 Clientes que MENOS consumiram. `);
+    // --- Listagem3por qtd de consumo ---
 
+    console.log(`[22] Listagem dos 10 Clientes que MAIS consumiram. `);
+    console.log(`[23] Listagem dos 5 Clientes que MENOS consumiram. `);
+    console.log(`[24] Listagem de Produtos e Serviços mais consumidos por gênero. `);
+    console.log(`[25] Top 5 Clientes que mais consumiram (em valor). `);
+    
     // --- Sair ---
     console.log();
     console.log(`[0] Sair \n`);
@@ -221,19 +220,25 @@ while (execucao) {
             let GeraCliWithProd = new geraPedidosProd(empresa)
             GeraCliWithProd.cadastrar()
             break;
-        case 22:
-            let GeraCliWithServ = new geraPedidosServ(empresa)
-            GeraCliWithServ.cadastrar()
-            break;
 
-        case 23:
+        case 22:
             let qtdMaisConsumido = new ListaMaiorConsumo(empresa)
             qtdMaisConsumido.listar()
             break;
 
-        case 24:
+        case 23:
             let qtdMenosConsumido = new ListaMenorConsumo(empresa)
             qtdMenosConsumido.listar()
+            break;
+
+        case 24:
+            let prodServByGenero = new ListagemGeneroConsumo(empresa.getClientes)
+            prodServByGenero.listar()
+            break;
+
+        case 25:
+            let listPrecoMaisConsumido = new ListagemConsumidoPreco(empresa.getClientes)
+            listPrecoMaisConsumido.listar()
             break;
 
         case 0:
