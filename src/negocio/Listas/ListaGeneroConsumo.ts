@@ -42,19 +42,16 @@ export default class ListagemGeneroConsumo extends Listagem {
             const [tipo,id] = k.split("_")
             return {id, tipo, qtd:filtrado.M[k].qtd, nome:filtrado.M[k].nome}
         }).sort((a, b) => b.qtd - a.qtd).slice(0, 3)
-        console.log(ordenadoM);
 
         let ordenadoF = Object.keys(filtrado.F).map( k => {
             const [tipo,id] = k.split("_")
             return {id, tipo, qtd:filtrado.F[k].qtd, nome:filtrado.F[k].nome}
         }).sort((a, b) => b.qtd - a.qtd).slice(0, 3)
-        console.log(ordenadoF);
         
         let ordenadoN = Object.keys(filtrado.N).map(k=>{
             const [tipo,id] = k.split("_")
             return {id, tipo, qtd:filtrado.N[k].qtd, nome:filtrado.N[k].nome}
         }).sort((a, b) => b.qtd - a.qtd).slice(0, 3)
-        console.log(ordenadoN);
 
         console.log(`Listagem dos serviços ou produtos mais consumidos por gênero`);
 
@@ -92,5 +89,4 @@ export default class ListagemGeneroConsumo extends Listagem {
         } )
     }
 
-    
 }
