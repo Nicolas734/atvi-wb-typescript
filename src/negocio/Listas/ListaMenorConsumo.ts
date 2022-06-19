@@ -41,14 +41,14 @@ export default class ListaMenorConsumo extends Listagem{
         })
 
         ordenacao = qtdConsumido.sort((x, y) => {
-            return x.quantidade - y.quantidade;
+            return y.quantidade - x.quantidade;
         })
 
         ordenacao.reverse()
 
         ordenacao = ordenacao.slice(0,10)
 
-        console.log("Listagem dos 10 Clientes que mais consumiram produtos ou servicos em quantidade.");
+        console.log("Listagem dos 10 Clientes que MENOS consumiram produtos ou servicos em quantidade.");
 
         console.log(`\n--------------------------------------\n`);
 

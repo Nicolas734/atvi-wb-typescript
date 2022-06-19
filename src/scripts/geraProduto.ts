@@ -35,14 +35,14 @@ const Prodlist = [
 
     // Coleção Calvice
     {
-        nomeProduto: 'Creme Para Calvos',
+        nomeProduto: 'Shampoo Masculino',
         descricaoProduto: 'Produto exclusivo para calvos.',
         valorProduto: 36.00,
         idProduto: 1
     },
     {
-        nomeProduto: 'Pente para calvos',
-        descricaoProduto: 'Pente exclusivo para calvos com calvice tipo O estagio final.',
+        nomeProduto: 'Pente',
+        descricaoProduto: 'Pente.',
         valorProduto: 50.00,
         idProduto: 2
     },
@@ -137,8 +137,8 @@ const Prodlist = [
         idProduto: 17
     },
     {
-        nomeProduto: 'Unhas postiças',
-        descricaoProduto: 'Unhas postiças coloridas',
+        nomeProduto: 'alicate de unha',
+        descricaoProduto: 'alicate de unha',
         valorProduto: 22.90,
         idProduto: 18
     },

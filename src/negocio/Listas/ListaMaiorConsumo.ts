@@ -43,7 +43,7 @@ export default class ListaMaiorConsumo extends Listagem{
 
         ordenacao = ordenacao.slice(0,10)
 
-        console.log("Listagem dos 10 Clientes que mais consumiram produtos ou servicos em quantidade.");
+        console.log("Listagem dos 10 Clientes que MAIS consumiram produtos ou servicos em quantidade.");
 
         console.log(`\n--------------------------------------\n`);
 

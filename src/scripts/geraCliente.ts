@@ -129,9 +129,9 @@ const Clientlist = [
         telefone: new Telefone('(19)','6955-2775')
     },
     {
-        nome: 'Gerson',
-        nomeSocial: 'Geferson',
-        genero: 'M',
+        nome: 'Geisy',
+        nomeSocial: '',
+        genero: 'F',
         cpf:{
             valor:'6',
             dataEmissao:new Date(21,12,2000)
@@ -157,9 +157,9 @@ const Clientlist = [
         telefone: new Telefone('(85)','2430-8840')
     },
     {
-        nome: 'Gerson Amazonha',
-        nomeSocial: 'Homem do Norte',
-        genero: 'N',
+        nome: 'Dilma',
+        nomeSocial: 'A mamãe do Brasil',
+        genero: 'F',
         cpf:{
             valor:'8',
             dataEmissao:new Date(21,12,2000)
@@ -186,7 +186,7 @@ const Clientlist = [
     },
     {
         nome: 'Lima',
-        nomeSocial: 'Cachaça',
+        nomeSocial: 'Catiassa',
         genero: 'M',
         cpf:{
             valor:'10',
@@ -227,9 +227,9 @@ const Clientlist = [
         telefone: new Telefone('(21)','2615-6910')
     },
     {
-        nome: 'Jean',
-        nomeSocial: 'Tutor do Colosso',
-        genero: 'M',
+        nome: 'Jeana',
+        nomeSocial: 'Tutora do Colosso',
+        genero: 'F',
         cpf:{
             valor:'13',
             dataEmissao:new Date(21,12,2000)
@@ -243,7 +243,7 @@ const Clientlist = [
     {
         nome: 'Lira',
         nomeSocial: 'Doida a Bessa',
-        genero: 'M',
+        genero: 'F',
         cpf:{
             valor:'14',
             dataEmissao:new Date(21,12,2000)
@@ -255,9 +255,9 @@ const Clientlist = [
         telefone: new Telefone('(85)','6662-7130')
     },
     {
-        nome: 'Natalia 2',
+        nome: 'Natalie',
         nomeSocial: 'Personalidade 2 da Natalia',
-        genero: 'N',
+        genero: 'F',
         cpf:{
             valor:'15',
             dataEmissao:new Date(21,12,2000)
@@ -313,7 +313,7 @@ const Clientlist = [
     {
         nome: 'Black Sabha',
         nomeSocial: 'Sabha',
-        genero: 'M',
+        genero: 'N',
         cpf:{
             valor:'19',
             dataEmissao:new Date(21,12,2000)
@@ -339,9 +339,9 @@ const Clientlist = [
         telefone: new Telefone('(42)','9283-4802')
     },
     {
-        nome: 'Waldomir',
-        nomeSocial: 'Lorde dos Banheiros',
-        genero: 'M',
+        nome: 'Waldomira',
+        nomeSocial: 'Senhora dos Banheiros',
+        genero: 'F',
         cpf:{
             valor:'21',
             dataEmissao:new Date(21,12,2000)
@@ -383,7 +383,7 @@ const Clientlist = [
     {
         nome: 'Princesa Wanderleia',
         nomeSocial: '',
-        genero: 'N',
+        genero: 'F',
         cpf:{
             valor:'24',
             dataEmissao:new Date(30,12,2000)
@@ -423,9 +423,9 @@ const Clientlist = [
         telefone: new Telefone('(13)','6872-5637')
     },
     {
-        nome: 'Harrisson',
-        nomeSocial: 'Não é Alisson',
-        genero: 'N',
+        nome: 'Diana',
+        nomeSocial: 'Mulher-Maravilha',
+        genero: 'F',
         cpf:{
             valor:'27',
             dataEmissao:new Date(21,12,2120)

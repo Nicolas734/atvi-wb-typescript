@@ -29,7 +29,7 @@ export default class CaseListagem extends Listagem{
             if(empresa.getServicos.length)console.log(`[2] Serviços mais consumidos.`);
             if(empresa.getProdutos.length)console.log(`[3] Produtos mais consumidos.`);
             console.log(`[4] Listagem dos 10 Clientes que MAIS consumiram. `);
-            console.log(`[5] Listagem dos 5 Clientes que MENOS consumiram. `);
+            console.log(`[5] Listagem dos 10 Clientes que MENOS consumiram. `);
             console.log(`[6] Listagem de Produtos e Serviços mais consumidos por gênero. `);
             console.log(`[7] Top 5 Clientes que mais consumiram (em valor). `);
             console.log();

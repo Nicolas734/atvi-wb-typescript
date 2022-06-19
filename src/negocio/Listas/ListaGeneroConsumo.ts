@@ -61,9 +61,9 @@ export default class ListagemGeneroConsumo extends Listagem {
 
         ordenadoM.forEach( (items, index) => {
             console.log(`${index + 1}°`);
-            console.log(`Id do produto: ${items.id}`);
+            console.log(`Id do ${items.tipo}: ${items.id}`);
             console.log(`Nome do ${items.tipo}: ${items.nome}`);
-            console.log(`Quantidade Consumido: ${items.id}\n`);
+            console.log(`Quantidade Consumido: ${items.qtd}\n`);
         } )
 
         console.log(`\n--------------------------------------\n`);
@@ -74,7 +74,7 @@ export default class ListagemGeneroConsumo extends Listagem {
             console.log(`${index + 1}°`);
             console.log(`Id do produto: ${items.id}`);
             console.log(`Nome do ${items.tipo}: ${items.nome}`);
-            console.log(`Quantidade Consumido: ${items.id}\n`);
+            console.log(`Quantidade Consumido: ${items.qtd}\n`);
         } )
 
         console.log(`\n--------------------------------------\n`);
@@ -85,7 +85,7 @@ export default class ListagemGeneroConsumo extends Listagem {
             console.log(`${index + 1}°`);
             console.log(`Id do produto: ${items.id}`);
             console.log(`Nome do ${items.tipo}: ${items.nome}`);
-            console.log(`Quantidade Consumido: ${items.id}\n`);
+            console.log(`Quantidade Consumido: ${items.qtd}\n`);
         } )
     }
 
